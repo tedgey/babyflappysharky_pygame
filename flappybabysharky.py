@@ -1,5 +1,9 @@
 import pygame
+
+from sharkyeet import Shark
+
 from seaweed import SeaWeed
+
 
 def main():
     width = 1000
