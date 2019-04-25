@@ -1,4 +1,5 @@
 import pygame
+from sharkyeet import Shark
 
 def main():
     width = 500
