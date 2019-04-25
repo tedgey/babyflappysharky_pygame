@@ -1,14 +1,22 @@
 import pygame
+from seaweed import SeaWeed
 
 def main():
-    width = 500
-    height = 500
+    width = 1000
+    height = 1000
     blue_color = (97, 159, 182)
 
     pygame.init()
     screen = pygame.display.set_mode((width, height))
     pygame.display.set_caption('My Game')
     clock = pygame.time.Clock()
+
+    # Adding image files
+    seaweed_image = pygame.image.load('images/seaweed.png').convert_alpha()
+
+    # Adding flappybabyshark and seaweed characters:
+
+    seaweed = SeaWeed(seaweed_image, 1000, 500, 1)
 
     # Game initialization
 
@@ -23,11 +31,13 @@ def main():
 
 
         # Game logic
+        seaweed.update_position(width, height)
 
         # Draw background
         screen.fill(blue_color)
 
         # Game display
+        seaweed.display(screen)
 
         pygame.display.update()
         clock.tick(60)
